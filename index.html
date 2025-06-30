@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venuss Films | Creative Media House</title>
+    <title>Venuss Media | Creative Media House</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -55,7 +55,7 @@
     <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold gradient-text">Venuss Films</a>
+                <a href="#" class="text-2xl font-bold gradient-text">Venuss Media</a>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="hover:text-purple-600 transition">Home</a>
                     <div class="relative group">
@@ -103,25 +103,34 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <div class="absolute inset-0 opacity-20">
-            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1bd0e7b4-7f8d-42e6-925f-7f31c489c08e.png" alt="Abstract colorful motion blur background representing creative energy" class="w-full h-full object-cover" />
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <!-- Video Background -->
+      <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+        <source src="assets/hero-background.mp4" type="video/mp4">
+        <source src="assets/hero-background.webm" type="video/webm">
+        <!-- Fallback image if video doesn't load -->
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1bd0e7b4-7f8d-42e6-925f-7f31c489c08e.png" alt="Background" class="w-full h-full object-cover" />
+      </video>
+      <!-- Hero Content -->
+      <div class="container mx-auto px-6 z-10 relative">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="heading-font text-5xl md:text-7xl font-bold text-white mb-6">
+            We Craft <span class="gradient-text">Visual Stories</span> That Resonate
+          </h1>
+          <p class="text-xl text-white/90 mb-10">
+            Transforming brands through compelling visual narratives and cinematic experiences.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#contact" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition">Get Started</a>
+            <a href="#work" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition">View Our Work</a>
+          </div>
         </div>
-        <div class="container mx-auto px-6 z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="heading-font text-5xl md:text-7xl font-bold text-white mb-6">We Craft <span class="gradient-text">Visual Stories</span> That Resonate</h1>
-                <p class="text-xl text-white/90 mb-10">Transforming brands through compelling visual narratives and cinematic experiences.</p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#contact" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition">Get Started</a>
-                    <a href="#work" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition">View Our Work</a>
-                </div>
-            </div>
-        </div>
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#services" class="text-white text-2xl">
-                <i class="fas fa-chevron-down"></i>
-            </a>
-        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+        <a href="#services" class="text-white text-2xl">
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
     </section>
 
     <!-- Client Marquee -->
@@ -328,7 +337,7 @@
                             <p class="text-sm text-gray-500">Marketing Director, TechBrand Inc.</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-6">"PixelCraft transformed our brand perception with their stunning campaign. Their strategic approach to visual storytelling helped us connect with our audience in ways we couldn't imagine."</p>
+                    <p class="text-gray-600 mb-6">"Venuss Media transformed our brand perception with their stunning campaign. Their strategic approach to visual storytelling helped us connect with our audience in ways we couldn't imagine."</p>
                     <div class="flex text-yellow-400">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -388,7 +397,7 @@
                 </div>
                 <div class="lg:w-1/2">
                     <h2 class="heading-font text-4xl md:text-5xl font-bold mb-6">Our <span class="gradient-text">Story</span></h2>
-                    <p class="text-gray-600 mb-6">Founded in 2015 by award-winning filmmakers and advertising professionals, PixelCraft Studios has grown into a premier creative media house trusted by global brands.</p>
+                    <p class="text-gray-600 mb-6">Founded in 2015 by award-winning filmmakers and advertising professionals, Venuss Media has grown into a premier creative media house trusted by global brands.</p>
                     <p class="text-gray-600 mb-6">We believe in the power of visual storytelling to connect brands with their audiences in meaningful ways. Our multidisciplinary team combines cinematic expertise with strategic marketing thinking.</p>
                     <div class="space-y-4 mb-8">
                         <div class="flex items-start">
@@ -512,7 +521,7 @@
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <h3 class="heading-font text-xl font-bold mb-4">Venuss Films</h3>
+                    <h3 class="heading-font text-xl font-bold mb-4">Venuss Media</h3>
                     <p class="text-gray-400">Creating visual stories that inspire, engage and transform brands.</p>
                 </div>
                 <div>
@@ -546,7 +555,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Venuss Films. All rights reserved.</p>
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Venuss Media. All rights reserved.</p>
                 <div class="flex space-x-6">
                     <a href="https://instagram.com/venussfilms" target="_blank" class="text-gray-400 hover:text-white transition">
                         <i class="fab fa-instagram"></i>
@@ -629,6 +638,39 @@
             
             window.addEventListener('scroll', animateOnScroll);
             animateOnScroll(); // Trigger once on load
+            
+            // Video debugging and fallback
+            const heroVideo = document.getElementById('heroVideo');
+            if (heroVideo) {
+                // Debug video loading
+                heroVideo.addEventListener('loadstart', () => console.log('Video loading started'));
+                heroVideo.addEventListener('loadeddata', () => console.log('Video data loaded'));
+                heroVideo.addEventListener('canplay', () => console.log('Video can play'));
+                heroVideo.addEventListener('error', (e) => {
+                    console.error('Video error:', e);
+                    console.log('Video src:', heroVideo.currentSrc);
+                });
+                
+                // Force video to play
+                heroVideo.addEventListener('canplaythrough', () => {
+                    heroVideo.play().catch(e => {
+                        console.log('Autoplay failed, trying user interaction:', e);
+                    });
+                });
+                
+                // Check if video file exists
+                fetch('assets/hero-background.mp4', { method: 'HEAD' })
+                    .then(response => {
+                        if (response.ok) {
+                            console.log('Video file exists and is accessible');
+                        } else {
+                            console.error('Video file not found or not accessible');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error checking video file:', error);
+                    });
+            }
         });
     </script>
 </body>
