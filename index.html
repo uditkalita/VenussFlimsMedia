@@ -388,6 +388,24 @@
         </div>
     </section>
 
+    <!-- Team Modal (hidden by default) -->
+    <div id="teamModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl shadow-xl p-8 max-w-lg w-full relative">
+        <button id="closeTeamModal" class="absolute top-4 right-4 text-gray-500 hover:text-purple-600 text-2xl font-bold">&times;</button>
+        <h2 class="heading-font text-3xl font-bold mb-6 text-center">Our Team</h2>
+        <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+          <div class="flex flex-col items-center">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pamkaj Soram" class="w-28 h-28 rounded-full shadow mb-2 object-cover" />
+            <span class="font-semibold text-lg">Pamkaj Soram</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Hena A. Kashyap" class="w-28 h-28 rounded-full shadow mb-2 object-cover" />
+            <span class="font-semibold text-lg">Hena A. Kashyap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- About Section -->
     <section id="about" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
@@ -428,7 +446,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold transition">
+                    <a href="#" id="meetTeamBtn" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold transition">
                         Meet The Team
                     </a>
                 </div>
@@ -437,83 +455,83 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="heading-font text-4xl md:text-5xl font-bold mb-4">Let's <span class="gradient-text">Create</span> Together</h2>
-                <p class="max-w-2xl mx-auto text-gray-600">Ready to bring your vision to life? Get in touch with our creative team.</p>
-            </div>
-            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 bg-purple-900 text-white p-12 flex flex-col justify-center">
-                        <h3 class="heading-font text-2xl font-bold mb-6">Contact Information</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="mr-4 text-purple-300">
-                                    <i class="fas fa-map-marker-alt text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Studio Address</h4>
-                                    <p>D.S. Mansion, Zoo Rd, opp. Spanish Garden,<br>above SPM IAS building, Sundarpur,<br>Guwahati, Assam 781005</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="mr-4 text-purple-300">
-                                    <i class="fas fa-envelope text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Email Us</h4>
-                                    <p>venusflims@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="mr-4 text-purple-300">
-                                    <i class="fas fa-phone-alt text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Call Us</h4>
-                                    <p>+91 93656 26430<br>+91 60014 12159</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-10">
-                            <h4 class="font-bold mb-4">Follow Our Work</h4>
-                            <div class="flex space-x-4">
-                                <a href="https://instagram.com/venussfilms" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 hover:bg-purple-700 flex items-center justify-center transition">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://facebook.com/venussfilms" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 hover:bg-purple-700 flex items-center justify-center transition">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="https://youtube.com/@venussfilms" target="_blank" class="w-10 h-10 rounded-full bg-purple-800 hover:bg-purple-700 flex items-center justify-center transition">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md:w-1/2 p-12">
-                        <div class="google-form-container">
-                            <iframe 
-                                src="https://docs.google.com/forms/d/e/1FAIpQLScRofsA7akyYW9ed3eSD63oEtDg4HXtVhTUFCx5FSZfff0V8w/viewform?embedded=true" 
-                                width="100%" 
-                                height="600" 
-                                frameborder="0" 
-                                marginheight="0" 
-                                marginwidth="0"
-                                style="border-radius: 12px; box-shadow: 0 4px 24px rgba(99,102,241,0.10);">
-                                Loading…
-                            </iframe>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <p class="text-gray-600 text-sm">
-                                <i class="fas fa-shield-alt mr-2"></i>
-                                Your information is secure and will be sent directly to our team
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="contact" class="py-10">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-8">
+          <h2 class="heading-font text-4xl md:text-5xl font-bold mb-2">Let's <span class="gradient-text">Create</span> Together</h2>
+          <p class="max-w-2xl mx-auto text-gray-600">Ready to bring your vision to life? Get in touch with our creative team.</p>
         </div>
+        <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="md:flex">
+            <div class="md:w-1/2 bg-purple-900 text-white p-6 flex flex-col justify-center">
+              <h3 class="heading-font text-2xl font-bold mb-4">Contact Information</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div class="mr-3 text-purple-300">
+                    <i class="fas fa-map-marker-alt text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Studio Address</h4>
+                    <p>D.S. Mansion, Zoo Rd,<br> opp. Spanish Garden,<br>above SPM IAS building,<br> Sundarpur,Guwahati,<br> Assam 781005</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="mr-3 text-purple-300">
+                    <i class="fas fa-envelope text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Email Us</h4>
+                    <p>venusflims@gmail.com</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="mr-3 text-purple-300">
+                    <i class="fas fa-phone-alt text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Call Us</h4>
+                    <p>+91 93656 26430<br>+91 60014 12159</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6">
+                <h4 class="font-bold mb-2">Follow Our Work</h4>
+                <div class="flex space-x-3">
+                  <a href="https://instagram.com/venussfilms" target="_blank" class="w-8 h-8 rounded-full bg-purple-800 hover:bg-purple-700 flex items-center justify-center transition">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://facebook.com/venussfilms" target="_blank" class="w-8 h-8 rounded-full bg-purple-800 hover:bg-purple-700 flex items-center justify-center transition">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://youtube.com/@venussfilms" target="_blank" class="w-8 h-8 rounded-full bg-purple-800 hover:bg-purple-700 flex items-center justify-center transition">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="md:w-1/2 p-6">
+              <div class="google-form-container">
+                <iframe 
+                  src="https://docs.google.com/forms/d/e/1FAIpQLScRofsA7akyYW9ed3eSD63oEtDg4HXtVhTUFCx5FSZfff0V8w/viewform?embedded=true" 
+                  width="100%" 
+                  height="500" 
+                  frameborder="0" 
+                  marginheight="0" 
+                  marginwidth="0"
+                  style="border-radius: 12px; box-shadow: 0 4px 24px rgba(99,102,241,0.10);">
+                  Loading…
+                </iframe>
+              </div>
+              <div class="mt-4 text-center">
+                <p class="text-gray-600 text-xs">
+                  <i class="fas fa-shield-alt mr-2"></i>
+                  Your information is secure and will be sent directly to our team
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
@@ -672,6 +690,26 @@
                     });
             }
         });
+
+        // Team Modal functionality
+        const meetTeamBtn = document.getElementById('meetTeamBtn');
+        const teamModal = document.getElementById('teamModal');
+        const closeTeamModal = document.getElementById('closeTeamModal');
+        if (meetTeamBtn && teamModal && closeTeamModal) {
+            meetTeamBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                teamModal.classList.remove('hidden');
+            });
+            closeTeamModal.addEventListener('click', function() {
+                teamModal.classList.add('hidden');
+            });
+            // Close modal when clicking outside the modal content
+            teamModal.addEventListener('click', function(e) {
+                if (e.target === teamModal) {
+                    teamModal.classList.add('hidden');
+                }
+            });
+        }
     </script>
 </body>
 </html>
