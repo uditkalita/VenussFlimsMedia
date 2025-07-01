@@ -6,6 +6,16 @@
     <title>Venuss Media | Creative Media House</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      connect-src 'self' https://script.google.com https://script.googleusercontent.com;
+      img-src 'self' https: data:;
+      script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://kit.fontawesome.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://kit-free.fontawesome.com;
+      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://use.fontawesome.com;
+      frame-src https://docs.google.com https://www.google.com;
+      child-src https://docs.google.com https://www.google.com;
+    ">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
         
@@ -92,6 +102,7 @@
                         </div>
                     </div>
                     <a href="#work" class="hover:text-purple-600 transition">Work</a>
+                    <a href="#awards" class="hover:text-purple-600 transition">Awards</a>
                     <a href="#about" class="hover:text-purple-600 transition">About</a>
                     <a href="#contact" class="hover:text-purple-600 transition">Contact</a>
                 </div>
@@ -166,141 +177,160 @@
                 <p class="max-w-2xl mx-auto text-gray-600">We combine strategy, design and technology to create memorable brand experiences.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-tv text-2xl text-purple-600"></i>
+                <!-- Service Card 1 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Commercial Ads" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-tv text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Commercial Ads</h3>
+                        <p class="text-white text-center drop-shadow">Compelling commercials that connect brands with their target audience through emotional storytelling.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Commercial Ads</h3>
-                    <p class="text-gray-600">Compelling commercials that connect brands with their target audience through emotional storytelling.</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-pink-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-film text-2xl text-pink-600"></i>
+                <!-- Service Card 2 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Short Films" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-pink-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-film text-2xl text-pink-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Short Films</h3>
+                        <p class="text-white text-center drop-shadow">Cinematic storytelling that captivates audiences and conveys powerful messages through visual narrative.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Short Films</h3>
-                    <p class="text-gray-600">Cinematic storytelling that captivates audiences and conveys powerful messages through visual narrative.</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-camera text-2xl text-blue-600"></i>
+                <!-- Service Card 3 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Creative Shoots" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-camera text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Creative Shoots</h3>
+                        <p class="text-white text-center drop-shadow">Unique visual content that helps brands stand out across digital and traditional media platforms.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Creative Shoots</h3>
-                    <p class="text-gray-600">Unique visual content that helps brands stand out across digital and traditional media platforms.</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-brain text-2xl text-yellow-600"></i>
+                <!-- Service Card 4 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Concept Development" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-brain text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Concept Development</h3>
+                        <p class="text-white text-center drop-shadow">Strategic creative concepts that align with brand identity and marketing objectives.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Concept Development</h3>
-                    <p class="text-gray-600">Strategic creative concepts that align with brand identity and marketing objectives.</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-photo-video text-2xl text-green-600"></i>
+                <!-- Service Card 5 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Post-Production" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-photo-video text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Post-Production</h3>
+                        <p class="text-white text-center drop-shadow">High-end editing, color grading and visual effects to bring your content to the highest standards.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Post-Production</h3>
-                    <p class="text-gray-600">High-end editing, color grading and visual effects to bring your content to the highest standards.</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-2xl text-indigo-600"></i>
+                <!-- Service Card 6 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Campaign Strategy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-chart-line text-2xl text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Campaign Strategy</h3>
+                        <p class="text-white text-center drop-shadow">Comprehensive multimedia campaign planning and execution across all platforms.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Campaign Strategy</h3>
-                    <p class="text-gray-600">Comprehensive multimedia campaign planning and execution across all platforms.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="work" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="heading-font text-4xl md:text-5xl font-bold mb-4">Featured <span class="gradient-text">Work</span></h2>
-                <p class="max-w-2xl mx-auto text-gray-600">A selection of our recent projects across different media formats and industries.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Project 1 -->
-                <div class="work-card group relative rounded-xl overflow-hidden h-80">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a5f575ac-92bd-41f7-a15b-4e23b592d523.png" alt="Commercial ad for athletic wear brand showcasing high-energy training scenes" class="w-full h-full object-cover" />
-                    <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
-                        <h3 class="text-white text-xl font-bold mb-1">Athletic Revolution Campaign</h3>
-                        <p class="text-white/80 mb-3">Commercial Ad</p>
-                        <a href="#" class="text-white font-medium hover:text-purple-300 inline-flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="work-card group relative rounded-xl overflow-hidden h-80">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8db11b66-89dc-4886-94a1-475f7682ebdd.png" alt="Cinematic short film still showing dramatic lighting in urban night scene" class="w-full h-full object-cover" />
-                    <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
-                        <h3 class="text-white text-xl font-bold mb-1">Midnight Echoes</h3>
-                        <p class="text-white/80 mb-3">Short Film</p>
-                        <a href="#" class="text-white font-medium hover:text-purple-300 inline-flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="work-card group relative rounded-xl overflow-hidden h-80">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2c918e3a-b224-40d9-8b1e-b13e66c204c5.png" alt="Luxury product photography showcasing gold watch with dramatic lighting" class="w-full h-full object-cover" />
-                    <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
-                        <h3 class="text-white text-xl font-bold mb-1">Timeless Elegance</h3>
-                        <p class="text-white/80 mb-3">Product Shoot</p>
-                        <a href="#" class="text-white font-medium hover:text-purple-300 inline-flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Project 4 -->
-                <div class="work-card group relative rounded-xl overflow-hidden h-80">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7455f9be-b00f-414c-8227-8e7690d4f828.png" alt="Environmental awareness campaign visuals featuring endangered species" class="w-full h-full object-cover" />
-                    <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
-                        <h3 class="text-white text-xl font-bold mb-1">Save Our World</h3>
-                        <p class="text-white/80 mb-3">Awareness Campaign</p>
-                        <a href="#" class="text-white font-medium hover:text-purple-300 inline-flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Project 5 -->
-                <div class="work-card group relative rounded-xl overflow-hidden h-80">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/615fc314-a748-4c7e-abda-887ffff4d29f.png" alt="Food commercial featuring close-up shots of gourmet dishes" class="w-full h-full object-cover" />
-                    <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
-                        <h3 class="text-white text-xl font-bold mb-1">Gourmet Delights</h3>
-                        <p class="text-white/80 mb-3">Commercial Ad</p>
-                        <a href="#" class="text-white font-medium hover:text-purple-300 inline-flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Project 6 -->
-                <div class="work-card group relative rounded-xl overflow-hidden h-80">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e80e302f-2f3c-44b4-9d39-5cb0ca3f6246.png" alt="Fashion editorial shoot with models in avant-garde clothing" class="w-full h-full object-cover" />
-                    <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
-                        <h3 class="text-white text-xl font-bold mb-1">Urban Runway</h3>
-                        <p class="text-white/80 mb-3">Fashion Editorial</p>
-                        <a href="#" class="text-white font-medium hover:text-purple-300 inline-flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="#" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold transition">
-                    View Full Portfolio
-                </a>
-            </div>
+    <section id="work" class="py-20 bg-gradient-to-br from-gray-100 via-purple-50 to-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-8">
+          <h2 class="heading-font text-4xl md:text-5xl font-bold mb-4">Featured <span class="gradient-text">Work</span></h2>
         </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10" id="portfolioGrid">
+          <!-- Each project card should have a data-category attribute -->
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="commercial">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a5f575ac-92bd-41f7-a15b-4e23b592d523.png" alt="Commercial ad for athletic wear brand showcasing high-energy training scenes" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+              <h3 class="text-white text-xl font-bold mb-1">Athletic Revolution Campaign</h3>
+              <p class="text-white/80 mb-3">Commercial Ad</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="commercial">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="film">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8db11b66-89dc-4886-94a1-475f7682ebdd.png" alt="Cinematic short film still showing dramatic lighting in urban night scene" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+              <h3 class="text-white text-xl font-bold mb-1">Midnight Echoes</h3>
+              <p class="text-white/80 mb-3">Short Film</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="film">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="shoot">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2c918e3a-b224-40d9-8b1e-b13e66c204c5.png" alt="Luxury product photography showcasing gold watch with dramatic lighting" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+              <h3 class="text-white text-xl font-bold mb-1">Timeless Elegance</h3>
+              <p class="text-white/80 mb-3">Creative Shoot</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="shoot">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="concept">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7455f9be-b00f-414c-8227-8e7690d4f828.png" alt="Environmental awareness campaign visuals featuring endangered species" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+              <h3 class="text-white text-xl font-bold mb-1">Save Our World</h3>
+              <p class="text-white/80 mb-3">Concept Development</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="concept">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="post">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/615fc314-a748-4c7e-abda-887ffff4d29f.png" alt="Food commercial featuring close-up shots of gourmet dishes" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+              <h3 class="text-white text-xl font-bold mb-1">Gourmet Delights</h3>
+              <p class="text-white/80 mb-3">Post-Production</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="post">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="campaign">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e80e302f-2f3c-44b4-9d39-5cb0ca3f6246.png" alt="Fashion editorial shoot with models in avant-garde clothing" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+              <h3 class="text-white text-xl font-bold mb-1">Urban Runway</h3>
+              <p class="text-white/80 mb-3">Campaign Strategy</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="campaign">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="py-20 bg-purple-900 text-white">
+    <section class="py-4 bg-purple-900 text-white">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8 text-center">
                 <div>
-                    <h3 class="heading-font text-5xl font-bold mb-2">150+</h3>
+                    <h3 id="completedProjectsStat" class="heading-font text-5xl font-bold mb-2 cursor-pointer hover:text-purple-300 transition">150+</h3>
                     <p class="text-white/80">Completed Projects</p>
                 </div>
                 <div>
@@ -312,11 +342,41 @@
                     <p class="text-white/80">Collective Views</p>
                 </div>
                 <div>
-                    <h3 class="heading-font text-5xl font-bold mb-2">12</h3>
+                    <h3 id="industryAwardsStat" class="heading-font text-5xl font-bold mb-2 cursor-pointer hover:text-purple-300 transition">12</h3>
                     <p class="text-white/80">Industry Awards</p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Place the new Awards section after the stats and before testimonials -->
+    <section id="awards" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-10">
+          <h2 class="heading-font text-4xl md:text-5xl font-bold mb-4">Our <span class="gradient-text">Awards</span></h2>
+          <p class="max-w-2xl mx-auto text-gray-600">We are honored to be recognized for our creative excellence and industry leadership.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <!-- Award Card 1 -->
+          <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Best Cinematography Trophy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+              <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-lg">Best Cinematography</h3>
+              <p class="text-white text-lg drop-shadow">National Media Awards 2022</p>
+            </div>
+          </div>
+          <!-- Award Card 2 -->
+          <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+            <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3fd8?auto=format&fit=crop&w=600&q=80" alt="Creative Excellence Award" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+              <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-lg">Creative Excellence</h3>
+              <p class="text-white text-lg drop-shadow">Global Ad Fest 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Testimonials -->
@@ -402,6 +462,21 @@
             <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Hena A. Kashyap" class="w-28 h-28 rounded-full shadow mb-2 object-cover" />
             <span class="font-semibold text-lg">Hena A. Kashyap</span>
           </div>
+          <div class="flex flex-col items-center">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Vinay" class="w-28 h-28 rounded-full shadow mb-2 object-cover" />
+            <span class="font-semibold text-lg">Vinay</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Modal (hidden by default) -->
+    <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl shadow-xl p-6 max-w-2xl w-full relative">
+        <button id="closeGalleryModal" class="absolute top-4 right-4 text-gray-500 hover:text-purple-600 text-2xl font-bold">&times;</button>
+        <h2 id="galleryTitle" class="heading-font text-2xl font-bold mb-4 text-center">Gallery</h2>
+        <div id="galleryContent" class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-center">
+          <!-- Gallery images will be injected here -->
         </div>
       </div>
     </div>
@@ -498,36 +573,41 @@
                 <h4 class="font-bold mb-2">Follow Our Work</h4>
                 <div class="flex space-x-3">
                   <a href="https://instagram.com/venussfilms" target="_blank" class="w-8 h-8 rounded-full bg-purple-800 hover:bg-purple-700 flex items-center justify-center transition">
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-instagram text-2xl"></i>
                   </a>
                   <a href="https://facebook.com/venussfilms" target="_blank" class="w-8 h-8 rounded-full bg-purple-800 hover:bg-purple-700 flex items-center justify-center transition">
-                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-facebook-f text-2xl"></i>
                   </a>
                   <a href="https://youtube.com/@venussfilms" target="_blank" class="w-8 h-8 rounded-full bg-purple-800 hover:bg-purple-700 flex items-center justify-center transition">
-                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-youtube text-2xl"></i>
                   </a>
                 </div>
               </div>
             </div>
             <div class="md:w-1/2 p-6">
-              <div class="google-form-container">
-                <iframe 
-                  src="https://docs.google.com/forms/d/e/1FAIpQLScRofsA7akyYW9ed3eSD63oEtDg4HXtVhTUFCx5FSZfff0V8w/viewform?embedded=true" 
-                  width="100%" 
-                  height="500" 
-                  frameborder="0" 
-                  marginheight="0" 
-                  marginwidth="0"
-                  style="border-radius: 12px; box-shadow: 0 4px 24px rgba(99,102,241,0.10);">
-                  Loading…
-                </iframe>
-              </div>
-              <div class="mt-4 text-center">
-                <p class="text-gray-600 text-xs">
-                  <i class="fas fa-shield-alt mr-2"></i>
-                  Your information is secure and will be sent directly to our team
-                </p>
-              </div>
+              <form id="contactForm" class="space-y-4">
+                <input type="text" name="name" id="contactName" required placeholder="Your Name" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none">
+                <input type="email" name="email" id="contactEmail" required placeholder="Your Email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none">
+                <input type="text" name="company" id="contactCompany" placeholder="Company" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none">
+                <select name="project" id="contactProject" required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none">
+                  <option value="" disabled selected>Select Project Type</option>
+                  <option>Commercial Ads</option>
+                  <option>Short Films</option>
+                  <option>Creative Shoots</option>
+                  <option>Post-Production</option>
+                  <option>Concept Development</option>
+                  <option>Campaign Strategy</option>
+                </select>
+                <textarea name="message" id="contactMessage" required rows="6" placeholder="Tell us about your project" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none"></textarea>
+                <button type="submit" id="contactSubmitBtn" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg flex items-center justify-center">
+                  <span id="contactBtnText">Send</span>
+                  <svg id="contactLoading" class="animate-spin h-5 w-5 ml-2 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                  </svg>
+                </button>
+                <span id="contactSuccess" class="text-green-500 text-sm hidden">Successfully sent!</span>
+              </form>
             </div>
           </div>
         </div>
@@ -545,10 +625,12 @@
                 <div>
                     <h4 class="font-bold mb-4">Services</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Commercial Production</a></li>
+                        <li><a href="#" class="hover:text-white transition">Commercial Ads</a></li>
                         <li><a href="#" class="hover:text-white transition">Short Films</a></li>
-                        <li><a href="#" class="hover:text-white transition">Creative Photography</a></li>
+                        <li><a href="#" class="hover:text-white transition">Creative Shoots</a></li>
                         <li><a href="#" class="hover:text-white transition">Post-Production</a></li>
+                        <li><a href="#" class="hover:text-white transition">Concept Development</a></li>
+                        <li><a href="#" class="hover:text-white transition">Campaign Strategy</a></li>
                     </ul>
                 </div>
                 <div>
@@ -564,11 +646,13 @@
                 <div>
                     <h4 class="font-bold mb-4">Newsletter</h4>
                     <p class="text-gray-400 mb-4">Subscribe for creative insights and project updates.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg bg-gray-800 text-white focus:outline-none w-full">
-                        <button type="submit" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-r-lg">
-                            <i class="fas fa-paper-plane"></i>
+                    <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" name="email" id="newsletterEmail" required placeholder="Your email" class="px-4 py-2 rounded-l-lg bg-gray-800 text-white focus:outline-none w-full">
+                        <button type="submit" id="newsletterSubmitBtn" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-r-lg text-white flex items-center justify-center">
+                          <span id="newsletterBtnText"> <i class="fas fa-paper-plane"></i> </span>
+                          <svg id="newsletterLoading" class="animate-spin h-5 w-5 ml-2 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>
                         </button>
+                        <span id="newsletterSuccess" class="text-green-400 text-sm mt-2 hidden">Successfully sent!</span>
                     </form>
                 </div>
             </div>
@@ -576,18 +660,50 @@
                 <p class="text-gray-400 mb-4 md:mb-0">© 2023 Venuss Media. All rights reserved.</p>
                 <div class="flex space-x-6">
                     <a href="https://instagram.com/venussfilms" target="_blank" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram text-2xl"></i>
                     </a>
                     <a href="https://facebook.com/venussfilms" target="_blank" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-facebook-f text-2xl"></i>
                     </a>
                     <a href="https://youtube.com/@venussfilms" target="_blank" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-youtube"></i>
+                        <i class="fab fa-youtube text-2xl"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Completed Projects Modal -->
+    <div id="projectsModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl shadow-xl p-8 max-w-lg w-full relative">
+        <button id="closeProjectsModal" class="absolute top-4 right-4 text-gray-500 hover:text-purple-600 text-2xl font-bold">&times;</button>
+        <h2 class="heading-font text-2xl font-bold mb-6 text-center">Completed Projects</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-800">
+          <li>Brand Launch: Urban Style Campaign</li>
+          <li>Documentary: The River's Tale</li>
+          <li>Commercial: FreshBite Foods</li>
+          <li>Short Film: Midnight Echoes</li>
+          <li>Music Video: Neon Dreams</li>
+          <li>Corporate Film: TechBrand Vision</li>
+          <li>Ad Campaign: Fitness Revolution</li>
+          <li>Product Shoot: Luxe Watches</li>
+          <li>Social Media Series: Inspire Daily</li>
+          <li>Fashion Editorial: Urban Runway</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Industry Awards Modal -->
+    <div id="awardsModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl shadow-xl p-8 max-w-lg w-full relative">
+        <button id="closeAwardsModal" class="absolute top-4 right-4 text-gray-500 hover:text-purple-600 text-2xl font-bold">&times;</button>
+        <h2 class="heading-font text-2xl font-bold mb-6 text-center">Industry Awards</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-800">
+          <li>Best Cinematography – National Media Awards 2022</li>
+          <li>Creative Excellence – Global Ad Fest 2023</li>
+        </ul>
+      </div>
+    </div>
 
     <script>
         // Mobile menu toggle functionality
@@ -656,39 +772,6 @@
             
             window.addEventListener('scroll', animateOnScroll);
             animateOnScroll(); // Trigger once on load
-            
-            // Video debugging and fallback
-            const heroVideo = document.getElementById('heroVideo');
-            if (heroVideo) {
-                // Debug video loading
-                heroVideo.addEventListener('loadstart', () => console.log('Video loading started'));
-                heroVideo.addEventListener('loadeddata', () => console.log('Video data loaded'));
-                heroVideo.addEventListener('canplay', () => console.log('Video can play'));
-                heroVideo.addEventListener('error', (e) => {
-                    console.error('Video error:', e);
-                    console.log('Video src:', heroVideo.currentSrc);
-                });
-                
-                // Force video to play
-                heroVideo.addEventListener('canplaythrough', () => {
-                    heroVideo.play().catch(e => {
-                        console.log('Autoplay failed, trying user interaction:', e);
-                    });
-                });
-                
-                // Check if video file exists
-                fetch('assets/hero-background.mp4', { method: 'HEAD' })
-                    .then(response => {
-                        if (response.ok) {
-                            console.log('Video file exists and is accessible');
-                        } else {
-                            console.error('Video file not found or not accessible');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error checking video file:', error);
-                    });
-            }
         });
 
         // Team Modal functionality
@@ -710,6 +793,173 @@
                 }
             });
         }
+
+        // Gallery Modal functionality
+        const galleryModal = document.getElementById('galleryModal');
+        const closeGalleryModal = document.getElementById('closeGalleryModal');
+        const galleryContent = document.getElementById('galleryContent');
+        const galleryTitle = document.getElementById('galleryTitle');
+        const galleryImages = {
+            commercial: [
+                'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80', // Commercial Ads
+                'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80' // TV ad set
+            ],
+            film: [
+                'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80', // Short Films
+                'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=400&q=80' // Film set
+            ],
+            shoot: [
+                'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80', // Creative Shoots
+                'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1519121788667-7a7e1b3c1c58?auto=format&fit=crop&w=400&q=80' // Photoshoot
+            ],
+            concept: [
+                'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80', // Concept Development
+                'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=400&q=80' // Brainstorming
+            ],
+            post: [
+                'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80', // Post-Production
+                'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=400&q=80' // Editing suite
+            ],
+            campaign: [
+                'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80', // Campaign Strategy
+                'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80' // Marketing
+            ]
+        };
+        // Open gallery modal on View Project
+        document.querySelectorAll('.view-project-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const cat = btn.getAttribute('data-category');
+                galleryTitle.textContent = btn.closest('.work-card').querySelector('h3').textContent + ' Gallery';
+                galleryContent.innerHTML = '';
+                (galleryImages[cat] || []).forEach(img => {
+                    const imgEl = document.createElement('img');
+                    imgEl.src = img;
+                    imgEl.className = 'rounded-lg shadow w-full object-cover';
+                    galleryContent.appendChild(imgEl);
+                });
+                galleryModal.classList.remove('hidden');
+            });
+        });
+        if (closeGalleryModal && galleryModal) {
+            closeGalleryModal.addEventListener('click', function() {
+                galleryModal.classList.add('hidden');
+            });
+            galleryModal.addEventListener('click', function(e) {
+                if (e.target === galleryModal) {
+                    galleryModal.classList.add('hidden');
+                }
+            });
+        }
+
+        // Stats modals functionality
+        const completedProjectsStat = document.getElementById('completedProjectsStat');
+        const industryAwardsStat = document.getElementById('industryAwardsStat');
+        const projectsModal = document.getElementById('projectsModal');
+        const awardsModal = document.getElementById('awardsModal');
+        const closeProjectsModal = document.getElementById('closeProjectsModal');
+        const closeAwardsModal = document.getElementById('closeAwardsModal');
+
+        if (completedProjectsStat && projectsModal && closeProjectsModal) {
+          completedProjectsStat.addEventListener('click', function() {
+            projectsModal.classList.remove('hidden');
+          });
+          closeProjectsModal.addEventListener('click', function() {
+            projectsModal.classList.add('hidden');
+          });
+          projectsModal.addEventListener('click', function(e) {
+            if (e.target === projectsModal) {
+              projectsModal.classList.add('hidden');
+            }
+          });
+        }
+        if (industryAwardsStat && awardsModal && closeAwardsModal) {
+          industryAwardsStat.addEventListener('click', function() {
+            awardsModal.classList.remove('hidden');
+          });
+          closeAwardsModal.addEventListener('click', function() {
+            awardsModal.classList.add('hidden');
+          });
+          awardsModal.addEventListener('click', function(e) {
+            if (e.target === awardsModal) {
+              awardsModal.classList.add('hidden');
+            }
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById('newsletterForm');
+          const emailInput = document.getElementById('newsletterEmail');
+          const successMsg = document.getElementById('newsletterSuccess');
+          const submitBtn = document.getElementById('newsletterSubmitBtn');
+          const loadingSpinner = document.getElementById('newsletterLoading');
+          const btnText = document.getElementById('newsletterBtnText');
+          if (form && emailInput && successMsg && submitBtn && loadingSpinner && btnText) {
+            form.addEventListener('submit', function(e) {
+              e.preventDefault();
+              loadingSpinner.classList.remove('hidden');
+              btnText.classList.add('hidden');
+              submitBtn.disabled = true;
+              fetch('https://script.google.com/macros/s/AKfycbz580GrB4w9_0aJ91hLC0xGhbpKs9SVC5Vvuzsjlqua_pt1WbsaYcajyTb63eh5ZaumJA/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'email=' + encodeURIComponent(emailInput.value)
+              }).then(() => {
+                loadingSpinner.classList.add('hidden');
+                btnText.classList.remove('hidden');
+                submitBtn.disabled = false;
+                successMsg.classList.remove('hidden');
+                emailInput.value = '';
+                setTimeout(() => successMsg.classList.add('hidden'), 3000);
+              });
+            });
+          }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+          const contactForm = document.getElementById('contactForm');
+          const nameInput = document.getElementById('contactName');
+          const emailInput = document.getElementById('contactEmail');
+          const companyInput = document.getElementById('contactCompany');
+          const projectInput = document.getElementById('contactProject');
+          const messageInput = document.getElementById('contactMessage');
+          const contactSubmitBtn = document.getElementById('contactSubmitBtn');
+          const contactLoadingSpinner = document.getElementById('contactLoading');
+          const contactBtnText = document.getElementById('contactBtnText');
+          const contactSuccessMsg = document.getElementById('contactSuccess');
+          if (contactForm && nameInput && emailInput && companyInput && projectInput && messageInput && contactSubmitBtn && contactLoadingSpinner && contactBtnText && contactSuccessMsg) {
+            contactForm.addEventListener('submit', function(e) {
+              e.preventDefault();
+              contactLoadingSpinner.classList.remove('hidden');
+              contactBtnText.classList.add('hidden');
+              contactSubmitBtn.disabled = true;
+              fetch('https://script.google.com/macros/s/AKfycbxa0zaVCvoLpVFSwLlfqhNE0Z8-Ta9_wCcIafogrE_OPKgurm4Iy65DvReM4KxfXfdHDA/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'name=' + encodeURIComponent(nameInput.value) +
+                      '&email=' + encodeURIComponent(emailInput.value) +
+                      '&company=' + encodeURIComponent(companyInput.value) +
+                      '&project=' + encodeURIComponent(projectInput.value) +
+                      '&message=' + encodeURIComponent(messageInput.value)
+              }).then(() => {
+                contactLoadingSpinner.classList.add('hidden');
+                contactBtnText.classList.remove('hidden');
+                contactSubmitBtn.disabled = false;
+                contactSuccessMsg.classList.remove('hidden');
+                contactForm.reset();
+                setTimeout(() => contactSuccessMsg.classList.add('hidden'), 3000);
+              });
+            });
+          }
+        });
     </script>
 </body>
 </html>
