@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venuss Media | Creative Media House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      connect-src 'self' https://script.google.com https://script.googleusercontent.com;
+      img-src 'self' https: data:;
+      script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://kit.fontawesome.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://kit-free.fontawesome.com;
+      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://use.fontawesome.com;
+      frame-src https://docs.google.com https://www.google.com;
+      child-src https://docs.google.com https://www.google.com;
+    ">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(236, 72, 153, 0.8));
+        }
+        
+        .work-card:hover .work-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .marquee {
+            animation: scroll 20s linear infinite;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text">Venuss Media</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-purple-600 transition">Home</a>
+                    <div class="relative group">
+                        <a href="#services" class="hover:text-purple-600 transition flex items-center">
+                            Services <i class="fas fa-chevron-down ml-1 text-sm transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                            <div class="py-2">
+                                <a href="#services" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                                    <i class="fas fa-tv mr-3 text-purple-600"></i>
+                                    Commercial Ads
+                                </a>
+                                <a href="#services" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                                    <i class="fas fa-film mr-3 text-pink-600"></i>
+                                    Commission Work
+                                </a>
+                                <a href="#services" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                                    <i class="fas fa-camera mr-3 text-purple-600"></i>
+                                    Creative Shoots
+                                </a>
+                                <a href="#services" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                                    <i class="fas fa-brain mr-3 text-purple-600"></i>
+                                    Content Development
+                                </a>
+                                <a href="#services" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                                    <i class="fas fa-photo-video mr-3 text-purple-600"></i>
+                                    Post-Production
+                                </a>
+                                <a href="#services" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                                    <i class="fas fa-chart-line mr-3 text-purple-600"></i>
+                                    Campaign Strategy
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#work" class="hover:text-purple-600 transition">Work</a>
+                    <a href="#awards" class="hover:text-purple-600 transition">Awards</a>
+                    <a href="#about" class="hover:text-purple-600 transition">About</a>
+                    <a href="#contact" class="hover:text-purple-600 transition">Contact</a>
+                </div>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen h-screen flex items-center justify-center overflow-hidden pt-20">
+      <!-- Video Background -->
+      <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0" style="object-fit: cover; height: 100%; width: 100%;">
+        <source src="assets/hero-background.mp4" type="video/mp4">
+        <source src="assets/hero-background.webm" type="video/webm">
+        <!-- Fallback image if video doesn't load -->
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1bd0e7b4-7f8d-42e6-925f-7f31c489c08e.png" alt="Background" class="w-full h-full object-cover" />
+      </video>
+      <!-- Hero Content -->
+      <div class="container mx-auto px-6 z-10 relative">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="heading-font text-5xl md:text-7xl font-bold text-white mb-6">
+            We Craft <span class="gradient-text">Visual Stories</span> That Resonate
+          </h1>
+          <p class="text-xl text-white/90 mb-10">
+            Transforming brands through compelling visual narratives and cinematic experiences.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#contact" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition">Get Started</a>
+            <a href="#work" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition">View Our Work</a>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+        <a href="#services" class="text-white text-2xl">
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Client Marquee -->
+    <div class="bg-gray-100 py-6 overflow-hidden">
+        <div class="marquee flex gap-16">
+            <div class="flex items-center gap-16">
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Parker</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Xiaomi</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Glucon-D</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Fastrack</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Kaisi Ye Paheli</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Ghost of Maaikhuli</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Joy Hanu Man</p>
+            </div>
+            <!-- Duplicate for infinite loop -->
+            <div class="flex items-center gap-16">
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Parker</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Xiaomi</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Glucon-D</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Fastrack</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Kaisi Ye Paheli</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Ghost of Maaikhuli</p>
+                <p class="text-2xl font-bold text-gray-600 whitespace-nowrap">Joy Hanu Man</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-4xl md:text-5xl font-bold mb-4">Our <span class="gradient-text">Creative</span> Services</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">We combine strategy, design and technology to create memorable brand experiences.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="assets/7.jpg" alt="Commercial Ads" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-tv text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Commercial Ads</h3>
+                        <p class="text-white text-center drop-shadow">Compelling commercials that connect brands with their target audience through emotional storytelling.</p>
+                    </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Commission Work" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-pink-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-film text-2xl text-pink-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Commission Work</h3>
+                        <p class="text-white text-center drop-shadow">Custom video projects tailored to your unique vision and requirements.</p>
+                    </div>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Creative Shoots" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-camera text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Creative Shoots</h3>
+                        <p class="text-white text-center drop-shadow">Unique visual content that helps brands stand out across digital and traditional media platforms.</p>
+                    </div>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Content Development" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-brain text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Content Development</h3>
+                        <p class="text-white text-center drop-shadow">Engaging content strategies and production tailored to your brand's goals and audience.</p>
+                    </div>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Post-Production" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-photo-video text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Post-Production</h3>
+                        <p class="text-white text-center drop-shadow">High-end editing, color grading and visual effects to bring your content to the highest standards.</p>
+                    </div>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Campaign Strategy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 opacity-80">
+                            <i class="fas fa-chart-line text-2xl text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white drop-shadow-lg">Campaign Strategy</h3>
+                        <p class="text-white text-center drop-shadow">Comprehensive multimedia campaign planning and execution across all platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="work" class="py-20 bg-gradient-to-br from-gray-100 via-purple-50 to-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-8">
+          <h2 class="heading-font text-4xl md:text-5xl font-bold mb-4">Featured <span class="gradient-text">Work</span></h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10" id="portfolioGrid">
+          <!-- Each project card should have a data-category attribute -->
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="commercial">
+            <img src="assets/7.jpg" alt="Commercial ad for athletic wear brand showcasing high-energy training scenes" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+             <h3 class="text-white text-xl font-bold mb-1"></h3>
+              <p class="text-white/80 mb-3">Commercial Ad</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="commercial">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="film">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8db11b66-89dc-4886-94a1-475f7682ebdd.png" alt="Cinematic short film still showing dramatic lighting in urban night scene" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+              <h3 class="text-white text-xl font-bold mb-1"></h3>
+              <p class="text-white/80 mb-3">Commission Work</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="film">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="shoot">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2c918e3a-b224-40d9-8b1e-b13e66c204c5.png" alt="Luxury product photography showcasing gold watch with dramatic lighting" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+              <h3 class="text-white text-xl font-bold mb-1"></h3>
+              <p class="text-white/80 mb-3">Creative Shoot</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="shoot">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="concept">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7455f9be-b00f-414c-8227-8e7690d4f828.png" alt="Environmental awareness campaign visuals featuring endangered species" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+              <h3 class="text-white text-xl font-bold mb-1"></h3>
+              <p class="text-white/80 mb-3">Content Development</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="concept">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="post">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/615fc314-a748-4c7e-abda-887ffff4d29f.png" alt="Food commercial featuring close-up shots of gourmet dishes" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+              <h3 class="text-white text-xl font-bold mb-1"></h3>
+              <p class="text-white/80 mb-3">Post-Production</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="post">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="work-card group relative rounded-xl overflow-hidden h-64" data-category="campaign">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e80e302f-2f3c-44b4-9d39-5cb0ca3f6246.png" alt="Fashion editorial shoot with models in avant-garde clothing" class="w-full h-full object-cover" />
+            <div class="work-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition duration-300">
+              <h3 class="text-white text-xl font-bold mb-1"></h3>
+              <p class="text-white/80 mb-3">Campaign Strategy</p>
+              <a href="#" class="view-project-btn text-white font-medium hover:text-purple-300 inline-flex items-center" data-category="campaign">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-4 bg-purple-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <h3 id="completedProjectsStat" class="heading-font text-5xl font-bold mb-2 cursor-pointer hover:text-purple-300 transition">150+</h3>
+                    <p class="text-white/80">Completed Projects</p>
+                </div>
+                <div>
+                    <h3 class="heading-font text-5xl font-bold mb-2">95%</h3>
+                    <p class="text-white/80">Client Retention</p>
+                </div>
+                <div>
+                    <h3 class="heading-font text-5xl font-bold mb-2">50M+</h3>
+                    <p class="text-white/80">Collective Views</p>
+                </div>
+                <div>
+                    <h3 id="industryAwardsStat" class="heading-font text-5xl font-bold mb-2 cursor-pointer hover:text-purple-300 transition">12</h3>
+                    <p class="text-white/80">Industry Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Place the new Awards section after the stats and before testimonials -->
+    <section id="awards" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-10">
+          <h2 class="heading-font text-4xl md:text-5xl font-bold mb-4">Our <span class="gradient-text">Awards</span></h2>
+          <p class="max-w-2xl mx-auto text-gray-600">We are honored to be recognized for our creative excellence and industry leadership.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <!-- Award Card 1 -->
+          <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Best Cinematography Trophy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+              <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-lg">Best Cinematography</h3>
+              <p class="text-white text-lg drop-shadow">National Media Awards 2022</p>
+            </div>
+          </div>
+          <!-- Award Card 2 -->
+          <div class="relative rounded-xl shadow-lg overflow-hidden group h-64 flex items-center justify-center">
+            <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3fd8?auto=format&fit=crop&w=600&q=80" alt="Creative Excellence Award" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition duration-300"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+              <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-lg">Creative Excellence</h3>
+              <p class="text-white text-lg drop-shadow">Global Ad Fest 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-4xl md:text-5xl font-bold mb-4">Client <span class="gradient-text">Testimonials</span></h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Hear what our clients say about working with our creative team.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cac84ae6-8a5f-4e1a-a221-3c697342689e.png" alt="Portrait of Sarah Johnson, Marketing Director at TechBrand Inc." class="w-full h-full object-cover" />
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-500">Marketing Director, TechBrand Inc.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Venuss Media transformed our brand perception with their stunning campaign. Their strategic approach to visual storytelling helped us connect with our audience in ways we couldn't imagine."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8729454c-85d8-43b9-82eb-411c506fc40b.png" alt="Portrait of Michael Chen, CEO of Urban Fashion Co." class="w-full h-full object-cover" />
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-sm text-gray-500">CEO, Urban Fashion Co.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The creative team understood our vision immediately and delivered exceptional fashion editorial content that boosted our social media engagement by 300%."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/45cbcbb3-29d6-44f4-be21-aee8e7a6b99a.png" alt="Portrait of David Rodriguez, Creative Director at Global Beverages" class="w-full h-full object-cover" />
+                        </div>
+                        <div>
+                            <h4 class="font-bold">David Rodriguez</h4>
+                            <p class="text-sm text-gray-500">Creative Director, Global Beverages</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Their attention to detail in our product shoots is unmatched. Every frame tells a story and elevates our brand quality perception. Truly remarkable work!"</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Modal (hidden by default) -->
+    <div id="teamModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl shadow-xl p-8 max-w-lg w-full relative">
+        <button id="closeTeamModal" class="absolute top-4 right-4 text-gray-500 hover:text-purple-600 text-2xl font-bold">&times;</button>
+        <h2 class="heading-font text-3xl font-bold mb-6 text-center">Our Team</h2>
+        <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+          <div class="flex flex-col items-center">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pamkaj Soram" class="w-28 h-28 rounded-full shadow mb-2 object-cover" />
+            <span class="font-semibold text-lg">Pamkaj Soram</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Hena A. Kashyap" class="w-28 h-28 rounded-full shadow mb-2 object-cover" />
+            <span class="font-semibold text-lg">Hena A. Kashyap</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Vinay" class="w-28 h-28 rounded-full shadow mb-2 object-cover" />
+            <span class="font-semibold text-lg">Vinay</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Modal (hidden by default) -->
+    <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl shadow-xl p-6 max-w-2xl w-full relative">
+        <button id="closeGalleryModal" class="absolute top-4 right-4 text-gray-500 hover:text-purple-600 text-2xl font-bold">&times;</button>
+        <h2 id="galleryTitle" class="heading-font text-2xl font-bold mb-4 text-center">Gallery</h2>
+        <div id="galleryContent" class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-center">
+          <!-- Gallery images will be injected here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6e435284-46b4-4fe8-8540-24bfcba6ed29.png" alt="Creative team working in modern studio with various media production equipment" class="rounded-xl shadow-xl w-full" />
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="heading-font text-4xl md:text-5xl font-bold mb-6">Our <span class="gradient-text">Story</span></h2>
+                    <p class="text-gray-600 mb-6">Founded in 2015 by award-winning filmmakers and advertising professionals, Venuss Media has grown into a premier creative media house trusted by global brands.</p>
+                    <p class="text-gray-600 mb-6">We believe in the power of visual storytelling to connect brands with their audiences in meaningful ways. Our multidisciplinary team combines cinematic expertise with strategic marketing thinking.</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-2 rounded-lg mr-4">
+                                <i class="fas fa-lightbulb text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Innovative Approach</h4>
+                                <p class="text-gray-600">We push creative boundaries while maintaining strategic focus to deliver exceptional results.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 p-2 rounded-lg mr-4">
+                                <i class="fas fa-award text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Award-Winning</h4>
+                                <p class="text-gray-600">Recognized internationally for excellence in cinematography, storytelling and visual effects.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-lg mr-4">
+                                <i class="fas fa-users text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Collaborative Process</h4>
+                                <p class="text-gray-600">We work closely with clients to bring their vision to life while adding our creative expertise.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" id="meetTeamBtn" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold transition">
+                        Meet The Team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-10">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-8">
+          <h2 class="heading-font text-4xl md:text-5xl font-bold mb-2">Let's <span class="gradient-text">Create</span> Together</h2>
+          <p class="max-w-2xl mx-auto text-gray-600">Ready to bring your vision to life? Get in touch with our creative team.</p>
+        </div>
+        <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="md:flex">
+            <div class="md:w-1/2 bg-purple-900 text-white p-6 flex flex-col justify-center">
+              <h3 class="heading-font text-2xl font-bold mb-4">Contact Information</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div class="mr-3 text-purple-300">
+                    <i class="fas fa-map-marker-alt text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Studio Address</h4>
+                    <p>D.S. Mansion, Zoo Rd,<br> opp. Spanish Garden,<br>above SPM IAS building,<br> Sundarpur,Guwahati,<br> Assam 781005</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="mr-3 text-purple-300">
+                    <i class="fas fa-envelope text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Email Us</h4>
+                    <p>venusflims@gmail.com</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="mr-3 text-purple-300">
+                    <i class="fas fa-phone-alt text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Call Us</h4>
+                    <p>+91 93656 26430<br>+91 60014 12159</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6">
+                <h4 class="font-bold mb-2">Follow Our Work</h4>
+                <div class="flex space-x-6 items-center">
+                  <span class="text-gray-400 font-semibold mr-2">Follow Us On</span>
+                  <a href="https://instagram.com/venussfilms" target="_blank" class="text-gray-400 hover:text-white transition">
+                    <i class="fab fa-instagram text-2xl"></i>
+                  </a>
+                  <a href="https://facebook.com/venussfilms" target="_blank" class="text-gray-400 hover:text-white transition">
+                    <i class="fab fa-facebook-f text-2xl"></i>
+                  </a>
+                  <a href="https://youtube.com/@venussfilms" target="_blank" class="text-gray-400 hover:text-white transition">
+                    <i class="fab fa-youtube text-2xl"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="md:w-1/2 p-6">
+              <form id="contactForm" class="space-y-4">
+                <input type="text" name="name" id="contactName" required placeholder="Your Name" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none">
+                <input type="email" name="email" id="contactEmail" required placeholder="Your Email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none">
+                <input type="text" name="company" id="contactCompany" placeholder="Company" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none">
+                <select name="project" id="contactProject" required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none">
+                  <option value="" disabled selected>Select Project Type</option>
+                  <option>Commercial Ads</option>
+                  <option>Commission Work</option>
+                  <option>Creative Shoots</option>
+                  <option>Post-Production</option>
+                  <option>Content Development</option>
+                  <option>Campaign Strategy</option>
+                </select>
+                <textarea name="message" id="contactMessage" required rows="6" placeholder="Tell us about your project" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none"></textarea>
+                <button type="submit" id="contactSubmitBtn" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg flex items-center justify-center">
+                  <span id="contactBtnText">Send</span>
+                  <svg id="contactLoading" class="animate-spin h-5 w-5 ml-2 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                  </svg>
+                </button>
+                <span id="contactSuccess" class="text-green-500 text-sm hidden">Successfully sent!</span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="heading-font text-xl font-bold mb-4">Venuss Media</h3>
+                    <p class="text-gray-400">Creating visual stories that inspire, engage and transform brands.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Commercial Ads</a></li>
+                        <li><a href="#" class="hover:text-white transition">Commission Work</a></li>
+                        <li><a href="#" class="hover:text-white transition">Creative Shoots</a></li>
+                        <li><a href="#" class="hover:text-white transition">Post-Production</a></li>
+                        <li><a href="#" class="hover:text-white transition">Content Development</a></li>
+                        <li><a href="#" class="hover:text-white transition">Campaign Strategy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                        <li><a href="#work" class="hover:text-white transition">Work</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe for creative insights and project updates.</p>
+                    <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" name="email" id="newsletterEmail" required placeholder="Your email" class="px-4 py-2 rounded-l-lg bg-gray-800 text-white focus:outline-none w-full">
+                        <button type="submit" id="newsletterSubmitBtn" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-r-lg text-white flex items-center justify-center">
+                          <span id="newsletterBtnText"> <i class="fas fa-paper-plane"></i> </span>
+                          <svg id="newsletterLoading" class="animate-spin h-5 w-5 ml-2 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>
+                        </button>
+                        <span id="newsletterSuccess" class="text-green-400 text-sm mt-2 hidden">Successfully sent!</span>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Venuss Media. All rights reserved.</p>
+                <div class="flex space-x-6 items-center">
+                    <span class="text-gray-400 font-semibold mr-2">Follow Our Work</span>
+                    <a href="https://instagram.com/venussfilms" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://facebook.com/venussfilms" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f text-2xl"></i>
+                    </a>
+                    <a href="https://youtube.com/@venussfilms" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Completed Projects Modal -->
+    <div id="projectsModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl shadow-xl p-8 max-w-lg w-full relative">
+        <button id="closeProjectsModal" class="absolute top-4 right-4 text-gray-500 hover:text-purple-600 text-2xl font-bold">&times;</button>
+        <h2 class="heading-font text-2xl font-bold mb-6 text-center">Completed Projects</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-800">
+          <li>Brand Launch: Urban Style Campaign</li>
+          <li>Documentary: The River's Tale</li>
+          <li>Commercial: FreshBite Foods</li>
+          <li>Commission Work: Midnight Echoes</li>
+          <li>Music Video: Neon Dreams</li>
+          <li>Corporate Film: TechBrand Vision</li>
+          <li>Ad Campaign: Fitness Revolution</li>
+          <li>Product Shoot: Luxe Watches</li>
+          <li>Social Media Series: Inspire Daily</li>
+          <li>Fashion Editorial: Urban Runway</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Industry Awards Modal -->
+    <div id="awardsModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl shadow-xl p-8 max-w-lg w-full relative">
+        <button id="closeAwardsModal" class="absolute top-4 right-4 text-gray-500 hover:text-purple-600 text-2xl font-bold">&times;</button>
+        <h2 class="heading-font text-2xl font-bold mb-6 text-center">Industry Awards</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-800">
+          <li>Best Cinematography – National Media Awards 2022</li>
+          <li>Creative Excellence – Global Ad Fest 2023</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('button.md\\:hidden');
+            const mobileMenu = document.querySelector('.md\\:flex.space-x-8');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                mobileMenu.classList.toggle('flex-col');
+                mobileMenu.classList.toggle('absolute');
+                mobileMenu.classList.toggle('top-16');
+                mobileMenu.classList.toggle('right-6');
+                mobileMenu.classList.toggle('bg-white');
+                mobileMenu.classList.toggle('p-4');
+                mobileMenu.classList.toggle('rounded-lg');
+                mobileMenu.classList.toggle('shadow-xl');
+                mobileMenu.classList.toggle('space-y-4');
+                mobileMenu.classList.toggle('space-x-0');
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenuButton.click();
+                        }
+                    }
+                });
+            });
+            
+            // Animate elements when scrolling
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.work-card, .testimonial-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Set initial styles for animation
+            document.querySelectorAll('.work-card, .testimonial-card').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Trigger once on load
+        });
+
+        // Team Modal functionality
+        const meetTeamBtn = document.getElementById('meetTeamBtn');
+        const teamModal = document.getElementById('teamModal');
+        const closeTeamModal = document.getElementById('closeTeamModal');
+        if (meetTeamBtn && teamModal && closeTeamModal) {
+            meetTeamBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                teamModal.classList.remove('hidden');
+            });
+            closeTeamModal.addEventListener('click', function() {
+                teamModal.classList.add('hidden');
+            });
+            // Close modal when clicking outside the modal content
+            teamModal.addEventListener('click', function(e) {
+                if (e.target === teamModal) {
+                    teamModal.classList.add('hidden');
+                }
+            });
+        }
+
+        // Gallery Modal functionality
+        const galleryModal = document.getElementById('galleryModal');
+        const closeGalleryModal = document.getElementById('closeGalleryModal');
+        const galleryContent = document.getElementById('galleryContent');
+        const galleryTitle = document.getElementById('galleryTitle');
+        const galleryImages = {
+            commercial: [
+                'assets/product shoot.mp4',
+                'assets/pods.mp4',
+                'assets/xiomi.mp4',
+                'assets/8.jpg',
+                'assets/27.jpg'
+            ],
+            film: [
+                'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80', // Commission Work
+                'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=400&q=80' // Film set
+            ],
+            shoot: [
+                'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80', // Creative Shoots
+                'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1519121788667-7a7e1b3c1c58?auto=format&fit=crop&w=400&q=80' // Photoshoot
+            ],
+            concept: [
+                'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80', // Content Development
+                'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=400&q=80' // Brainstorming
+            ],
+            post: [
+                'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80', // Post-Production
+                'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=400&q=80' // Editing suite
+            ],
+            campaign: [
+                'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80', // Campaign Strategy
+                'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
+                'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80' // Marketing
+            ]
+        };
+        // Open gallery modal on View Project
+        document.querySelectorAll('.view-project-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const cat = btn.getAttribute('data-category');
+                galleryTitle.textContent = btn.closest('.work-card').querySelector('h3').textContent + ' Gallery';
+                galleryContent.innerHTML = '';
+                (galleryImages[cat] || []).forEach(media => {
+                    let mediaEl;
+                    if (typeof media === 'string' && media.endsWith('.mp4')) {
+                        mediaEl = document.createElement('video');
+                        mediaEl.src = media;
+                        mediaEl.controls = true;
+                        mediaEl.className = 'rounded-lg shadow w-full object-cover';
+                    } else {
+                        mediaEl = document.createElement('img');
+                        mediaEl.src = media;
+                        mediaEl.className = 'rounded-lg shadow w-full object-cover';
+                    }
+                    galleryContent.appendChild(mediaEl);
+                });
+                galleryModal.classList.remove('hidden');
+            });
+        });
+        if (closeGalleryModal && galleryModal) {
+            closeGalleryModal.addEventListener('click', function() {
+                galleryModal.classList.add('hidden');
+            });
+            galleryModal.addEventListener('click', function(e) {
+                if (e.target === galleryModal) {
+                    galleryModal.classList.add('hidden');
+                }
+            });
+        }
+
+        // Stats modals functionality
+        const completedProjectsStat = document.getElementById('completedProjectsStat');
+        const industryAwardsStat = document.getElementById('industryAwardsStat');
+        const projectsModal = document.getElementById('projectsModal');
+        const awardsModal = document.getElementById('awardsModal');
+        const closeProjectsModal = document.getElementById('closeProjectsModal');
+        const closeAwardsModal = document.getElementById('closeAwardsModal');
+
+        if (completedProjectsStat && projectsModal && closeProjectsModal) {
+          completedProjectsStat.addEventListener('click', function() {
+            projectsModal.classList.remove('hidden');
+          });
+          closeProjectsModal.addEventListener('click', function() {
+            projectsModal.classList.add('hidden');
+          });
+          projectsModal.addEventListener('click', function(e) {
+            if (e.target === projectsModal) {
+              projectsModal.classList.add('hidden');
+            }
+          });
+        }
+        if (industryAwardsStat && awardsModal && closeAwardsModal) {
+          industryAwardsStat.addEventListener('click', function() {
+            awardsModal.classList.remove('hidden');
+          });
+          closeAwardsModal.addEventListener('click', function() {
+            awardsModal.classList.add('hidden');
+          });
+          awardsModal.addEventListener('click', function(e) {
+            if (e.target === awardsModal) {
+              awardsModal.classList.add('hidden');
+            }
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById('newsletterForm');
+          const emailInput = document.getElementById('newsletterEmail');
+          const successMsg = document.getElementById('newsletterSuccess');
+          const submitBtn = document.getElementById('newsletterSubmitBtn');
+          const loadingSpinner = document.getElementById('newsletterLoading');
+          const btnText = document.getElementById('newsletterBtnText');
+          if (form && emailInput && successMsg && submitBtn && loadingSpinner && btnText) {
+            form.addEventListener('submit', function(e) {
+              e.preventDefault();
+              loadingSpinner.classList.remove('hidden');
+              btnText.classList.add('hidden');
+              submitBtn.disabled = true;
+              fetch('https://script.google.com/macros/s/AKfycbz580GrB4w9_0aJ91hLC0xGhbpKs9SVC5Vvuzsjlqua_pt1WbsaYcajyTb63eh5ZaumJA/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'email=' + encodeURIComponent(emailInput.value)
+              }).then(() => {
+                loadingSpinner.classList.add('hidden');
+                btnText.classList.remove('hidden');
+                submitBtn.disabled = false;
+                successMsg.classList.remove('hidden');
+                emailInput.value = '';
+                setTimeout(() => successMsg.classList.add('hidden'), 3000);
+              });
+            });
+          }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+          const contactForm = document.getElementById('contactForm');
+          const nameInput = document.getElementById('contactName');
+          const emailInput = document.getElementById('contactEmail');
+          const companyInput = document.getElementById('contactCompany');
+          const projectInput = document.getElementById('contactProject');
+          const messageInput = document.getElementById('contactMessage');
+          const contactSubmitBtn = document.getElementById('contactSubmitBtn');
+          const contactLoadingSpinner = document.getElementById('contactLoading');
+          const contactBtnText = document.getElementById('contactBtnText');
+          const contactSuccessMsg = document.getElementById('contactSuccess');
+          if (contactForm && nameInput && emailInput && companyInput && projectInput && messageInput && contactSubmitBtn && contactLoadingSpinner && contactBtnText && contactSuccessMsg) {
+            contactForm.addEventListener('submit', function(e) {
+              e.preventDefault();
+              contactLoadingSpinner.classList.remove('hidden');
+              contactBtnText.classList.add('hidden');
+              contactSubmitBtn.disabled = true;
+              fetch('https://script.google.com/macros/s/AKfycbxa0zaVCvoLpVFSwLlfqhNE0Z8-Ta9_wCcIafogrE_OPKgurm4Iy65DvReM4KxfXfdHDA/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'name=' + encodeURIComponent(nameInput.value) +
+                      '&email=' + encodeURIComponent(emailInput.value) +
+                      '&company=' + encodeURIComponent(companyInput.value) +
+                      '&project=' + encodeURIComponent(projectInput.value) +
+                      '&message=' + encodeURIComponent(messageInput.value)
+              }).then(() => {
+                contactLoadingSpinner.classList.add('hidden');
+                contactBtnText.classList.remove('hidden');
+                contactSubmitBtn.disabled = false;
+                contactSuccessMsg.classList.remove('hidden');
+                contactForm.reset();
+                setTimeout(() => contactSuccessMsg.classList.add('hidden'), 3000);
+              });
+            });
+          }
+        });
+    </script>
+</body>
+</html>
+
