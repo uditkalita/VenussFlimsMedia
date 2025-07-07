@@ -475,9 +475,12 @@
       <div class="bg-white rounded-xl shadow-xl p-3 sm:p-6 max-w-xs sm:max-w-2xl w-11/12 sm:w-full relative">
         <button id="closeGalleryModal" class="absolute top-4 right-4 text-gray-500 hover:text-purple-600 text-2xl font-bold">&times;</button>
         <h2 id="galleryTitle" class="heading-font text-2xl font-bold mb-4 text-center">Gallery</h2>
-        <div id="galleryContent" class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-center">
-          <!-- Gallery images will be injected here -->
+        <div class="flex items-center justify-center gap-4 mb-2">
+          <button id="galleryPrev" class="px-3 py-1 bg-gray-200 rounded-full text-lg font-bold hover:bg-purple-200">&#8592;</button>
+          <div id="galleryContent" class="flex-1 flex justify-center items-center min-h-[200px] max-h-[60vh]"></div>
+          <button id="galleryNext" class="px-3 py-1 bg-gray-200 rounded-full text-lg font-bold hover:bg-purple-200">&#8594;</button>
         </div>
+        <div id="galleryCounter" class="text-center text-gray-500 text-sm"></div>
       </div>
     </div>
 
@@ -801,10 +804,18 @@
         const closeGalleryModal = document.getElementById('closeGalleryModal');
         const galleryContent = document.getElementById('galleryContent');
         const galleryTitle = document.getElementById('galleryTitle');
+        const galleryPrev = document.getElementById('galleryPrev');
+        const galleryNext = document.getElementById('galleryNext');
+        const galleryCounter = document.getElementById('galleryCounter');
+        let galleryCurrentIndex = 0;
+        let galleryCurrentMedia = [];
+
         const galleryImages = {
             commercial: [
                 'assets/product shoot.mp4',
                 'assets/8.jpg',
+                'assets/necklace.jpg',
+                'assets/drop.jpg',
                 'assets/27.jpg'
             ],
             film: [
@@ -833,27 +844,37 @@
                 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80' // Marketing
             ]
         };
+
+        function showGalleryMedia(index) {
+          if (!galleryCurrentMedia.length) return;
+          galleryContent.innerHTML = '';
+          let media = galleryCurrentMedia[index];
+          let mediaEl;
+          if (typeof media === 'string' && media.endsWith('.mp4')) {
+            mediaEl = document.createElement('video');
+            mediaEl.src = media;
+            mediaEl.controls = true;
+            mediaEl.className = 'rounded-lg shadow w-full object-cover max-h-[50vh]';
+          } else {
+            mediaEl = document.createElement('img');
+            mediaEl.src = media;
+            mediaEl.className = 'rounded-lg shadow w-full object-cover max-h-[50vh]';
+          }
+          galleryContent.appendChild(mediaEl);
+          galleryCounter.textContent = (index + 1) + ' / ' + galleryCurrentMedia.length;
+          galleryPrev.disabled = (index === 0);
+          galleryNext.disabled = (index === galleryCurrentMedia.length - 1);
+        }
+
         // Open gallery modal on View Project
         document.querySelectorAll('.view-project-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const cat = btn.getAttribute('data-category');
                 galleryTitle.textContent = btn.closest('.work-card').querySelector('h3').textContent + ' Gallery';
-                galleryContent.innerHTML = '';
-                (galleryImages[cat] || []).forEach(media => {
-                    let mediaEl;
-                    if (typeof media === 'string' && media.endsWith('.mp4')) {
-                        mediaEl = document.createElement('video');
-                        mediaEl.src = media;
-                        mediaEl.controls = true;
-                        mediaEl.className = 'rounded-lg shadow w-full object-cover';
-                    } else {
-                        mediaEl = document.createElement('img');
-                        mediaEl.src = media;
-                        mediaEl.className = 'rounded-lg shadow w-full object-cover';
-                    }
-                    galleryContent.appendChild(mediaEl);
-                });
+                galleryCurrentMedia = galleryImages[cat] || [];
+                galleryCurrentIndex = 0;
+                showGalleryMedia(galleryCurrentIndex);
                 galleryModal.classList.remove('hidden');
             });
         });
@@ -866,6 +887,20 @@
                     galleryModal.classList.add('hidden');
                 }
             });
+        }
+        if (galleryPrev && galleryNext) {
+          galleryPrev.addEventListener('click', function() {
+            if (galleryCurrentIndex > 0) {
+              galleryCurrentIndex--;
+              showGalleryMedia(galleryCurrentIndex);
+            }
+          });
+          galleryNext.addEventListener('click', function() {
+            if (galleryCurrentIndex < galleryCurrentMedia.length - 1) {
+              galleryCurrentIndex++;
+              showGalleryMedia(galleryCurrentIndex);
+            }
+          });
         }
 
         // Stats modals functionality
